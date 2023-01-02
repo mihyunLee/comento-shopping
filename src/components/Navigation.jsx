@@ -1,9 +1,12 @@
+import styled from "styled-components";
+
 const Navigation = () => {
-  return (
-    <div>
-      <h3>코멘토 쇼핑</h3>
-    </div>
-  );
+  return <NavagationTitle>코멘토 쇼핑</NavagationTitle>;
 };
+
+const NavagationTitle = styled.h3`
+  font-size: 18px;
+  text-align: center;
+`;
 
 export default Navigation;
