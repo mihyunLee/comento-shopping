@@ -2,19 +2,22 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
+import styled from "styled-components";
 
 const Home = () => {
   return (
     <div>
       {/* Navigation */}
       <Navigation />
-      <div>
-        {/* ThemeButton */}
+      <GrayLine height={1} />
+      {/* ThemeButton */}
+      <ThemeSection>
         <ThemeButton themeName={"# 겨울 방한템"} />
         <ThemeButton themeName={"# 따순머그컵"} />
-      </div>
-      <div>
-        {/* Product Card */}
+      </ThemeSection>
+      <GrayLine height={8} />
+      {/* Product Card */}
+      <ProductSection>
         <ProductCard
           name={"비숑 블랙 머그잔"}
           description={
@@ -42,9 +45,32 @@ const Home = () => {
             "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product2.jpg"
           }
         />
-      </div>
+      </ProductSection>
     </div>
   );
 };
+
+const GrayLine = styled.div`
+  width: 100%;
+  height: ${(props) => props.height}px;
+
+  background: #eeeeee;
+`;
+
+const ThemeSection = styled.div`
+  display: flex;
+  gap: 12px;
+
+  margin: 40px 24px;
+`;
+
+const ProductSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-top: 43px;
+  margin-bottom: 85px;
+`;
 
 export default Home;
