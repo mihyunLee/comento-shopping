@@ -5,7 +5,7 @@ import ProductDetail from "./pages/ProductDetail";
 
 function App() {
   return (
-    <BrowserRouter basename="comento-shopping">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
