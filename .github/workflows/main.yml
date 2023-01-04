@@ -11,9 +11,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run a copy index.html to 404.html
-      run: |
-        cp public/index.html public/404.html
-    
     - name: Deploy react app to github pages
       uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
