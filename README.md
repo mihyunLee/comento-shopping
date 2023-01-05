@@ -22,7 +22,7 @@ https://mihyunlee.github.io/comento-shopping/
 
 | 주차     | 내용                  | 세션 링크                                                                  | 회고 링크 |
 | -------- | --------------------- | -------------------------------------------------------------------------- | --------- |
-| 🥚 1주차 | Git 주요 기능 실습    | [Github Project - Session1](https://github.com/users/mihyunLee/projects/2) | 작성중    |
+| 🥚 1주차 | Git 주요 기능 실습    | [Github Project - Session1](https://github.com/users/mihyunLee/projects/2) | [1주차 회고 written by.Tistory](https://codingmyoni.tistory.com/155)    |
 | 🐣 2주차 | 라우팅 적용, 스타일링 | [Github Project - Session2](https://github.com/users/mihyunLee/projects/3) | 작성중    |
 
 <!-- TODO:기능 작성 -->
