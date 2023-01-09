@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Navigation = () => {
-  // TODO: ProductDetail 페이지일 시, 화살표 모양 추가
+const Navigation = ({ isHome = false }) => {
+  const navigate = useNavigate();
+
   return (
-    <StyledNavigation>
-      <span>&lt;</span>
+    <StyledNavigation isHome={isHome}>
+      <span onClick={() => navigate(-1)}>&lt;</span>
       <h3>코멘토 쇼핑</h3>
       <span>&nbsp;</span>
     </StyledNavigation>
@@ -22,7 +24,7 @@ const StyledNavigation = styled.div`
 
   span:nth-child(1) {
     cursor: pointer;
-    visibility: hidden;
+    visibility: ${(props) => (props.isHome ? "hidden" : "visible")};
   }
 
   h3 {

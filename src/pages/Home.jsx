@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navigation />
+      <Navigation isHome={true} />
       <GrayLine height={1} />
       <ThemeSection>
         <ThemeButton
