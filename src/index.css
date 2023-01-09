@@ -4,6 +4,8 @@ body {
   display: flex;
   justify-content: center;
 
+  background-color: #eeeeee;
+
   margin: 0;
   font-family: "Noto Sans KR", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -19,4 +21,8 @@ code {
 
 #root {
   width: 390px;
+
+  background-color: #ffffff;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
