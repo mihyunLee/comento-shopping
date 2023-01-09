@@ -49,3 +49,9 @@ export const mockTheme2Products = [
       "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product6.jpg",
   },
 ];
+
+export const getProductDetail = (productId) => {
+  return [...mockTheme1Products, ...mockTheme2Products].find((product) => {
+    return product.id === Number(productId);
+  });
+};

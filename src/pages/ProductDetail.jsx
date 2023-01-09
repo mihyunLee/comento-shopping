@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BasketButton from "../components/BasketButton";
 import DetailMenuTabs from "../components/DetailMenuTabs";
 import Navigation from "../components/Navigation";
 import ProductInfo from "../components/ProductInfo";
 import ProductDetailView from "../components/ProductDetailView";
 import { useParams } from "react-router-dom";
+import { getProductDetail } from "../data/mockData";
 
 const ProductDetail = () => {
   let { productId } = useParams();
+  const [product, setProduct] = useState();
+
+  useEffect(() => {
+    const result = getProductDetail(productId);
+    setProduct(result);
+  }, [productId]);
 
   return (
     <div>
