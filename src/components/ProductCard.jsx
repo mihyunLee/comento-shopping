@@ -3,9 +3,9 @@ import styled from "styled-components";
 const ProductCard = ({ name, description, thumbnail }) => {
   return (
     <StyledProductCard>
-      <ProductImg src={thumbnail} alt={name} />
-      <ProductName>{name}</ProductName>
-      <div>{description}</div>
+      <img src={thumbnail} alt={name} />
+      <span>{name}</span>
+      <span>{description}</span>
     </StyledProductCard>
   );
 };
@@ -18,18 +18,18 @@ const StyledProductCard = styled.div`
   width: 342px;
 
   margin: 0 25px;
-`;
 
-const ProductImg = styled.img`
-  width: 100%;
-  height: 204px;
+  img {
+    width: 100%;
+    height: 204px;
 
-  object-fit: cover; /* IE는 지원하지 않음 */
-`;
+    object-fit: cover; /* IE는 지원하지 않음 */
+  }
 
-const ProductName = styled.div`
-  font-size: 20px;
-  font-weight: bold;
+  span:nth-child(2) {
+    font-size: 20px;
+    font-weight: bold;
+  }
 `;
 
 export default ProductCard;
