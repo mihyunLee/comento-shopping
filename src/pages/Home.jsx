@@ -4,9 +4,11 @@ import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
 import styled from "styled-components";
 import { mockTheme1Products, mockTheme2Products } from "../data/mockData";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState();
+  const navigate = useNavigate();
 
   const onClickThemeButton = (themeId) => {
     if (themeId === 1) {
@@ -46,6 +48,7 @@ const Home = () => {
               name={product.name}
               description={product.description}
               thumbnail={product.thumbnail}
+              onClick={() => navigate(`product/${product.id}`)}
             />
           ))
         ) : (

@@ -4,8 +4,11 @@ import DetailMenuTabs from "../components/DetailMenuTabs";
 import Navigation from "../components/Navigation";
 import ProductInfo from "../components/ProductInfo";
 import ProductDetailView from "../components/ProductDetailView";
+import { useParams } from "react-router-dom";
 
 const ProductDetail = () => {
+  let { productId } = useParams();
+
   return (
     <div>
       <Navigation />
