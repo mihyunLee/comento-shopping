@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const ProductInfo = ({ name, cost, thumbnail }) => {
+const ProductInfo = ({ name, price, thumbnail }) => {
   return (
     <StyledProductInfo>
       <img src={thumbnail} alt={name} />
       <span>{name}</span>
-      <span>{cost}원</span>
+      <span>{price.toLocaleString()}원</span>
     </StyledProductInfo>
   );
 };
