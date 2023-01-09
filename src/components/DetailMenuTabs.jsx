@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-const DetailMenuButton = () => {
+const DetailMenuTabs = () => {
   return (
-    <DetailMenuButtonTemplate>
+    <StyledDetailMenuTabs>
       <MenuButton position={"left"}>상품 설명</MenuButton>
       <MenuButton position={"right"}>상품 후기</MenuButton>
-    </DetailMenuButtonTemplate>
+    </StyledDetailMenuTabs>
   );
 };
 
-const DetailMenuButtonTemplate = styled.div`
+const StyledDetailMenuTabs = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,4 +38,4 @@ const MenuButton = styled.button`
   cursor: pointer;
 `;
 
-export default DetailMenuButton;
+export default DetailMenuTabs;

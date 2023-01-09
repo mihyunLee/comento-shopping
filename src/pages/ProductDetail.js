@@ -1,6 +1,6 @@
 import React from "react";
 import BasketButton from "../components/BasketButton";
-import DetailMenuButton from "../components/DetailMenuButton";
+import DetailMenuTabs from "../components/DetailMenuTabs";
 import Navigation from "../components/Navigation";
 import ProductInfo from "../components/ProductInfo";
 import ProductDetailView from "../components/ProductDetailView";
@@ -16,7 +16,7 @@ const ProductDetail = () => {
           "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"
         }
       />
-      <DetailMenuButton />
+      <DetailMenuTabs />
       <ProductDetailView
         detailImg={
           "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1_detail.jpeg"
