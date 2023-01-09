@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const DetailMenuTabs = () => {
+const DetailMenuTabs = ({ firstTabName, secondTabName }) => {
   return (
     <StyledDetailMenuTabs>
-      <MenuButton position={"left"}>상품 설명</MenuButton>
-      <MenuButton position={"right"}>상품 후기</MenuButton>
+      <button name="button">{firstTabName}</button>
+      <button name="button">{secondTabName}</button>
     </StyledDetailMenuTabs>
   );
 };
@@ -17,25 +17,28 @@ const StyledDetailMenuTabs = styled.div`
   width: 100%;
 
   text-align: center;
-`;
 
-const MenuButton = styled.button`
-  flex: 1;
-  height: 48px;
+  button {
+    flex: 1;
+    height: 48px;
 
-  /* FIXME: 위치 기준이 아닌 버튼의 선택 유무에 따라 스타일 적용 */
-  background-color: ${(props) =>
-    props.position === "left" ? "#eeeeee" : "#ffffff"};
+    background-color: #ffffff;
 
-  font-weight: ${(props) => (props.position === "left" ? "bold" : "normal")};
-  font-size: 16px;
-  font-family: "Noto Sans KR";
+    font-size: 16px;
+    font-family: "Noto Sans KR";
 
-  border: 1px solid #eeeeee;
+    border: 1px solid #eeeeee;
 
-  margin: 25px 0;
+    margin: 25px 0;
 
-  cursor: pointer;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      background-color: #eeeeee;
+      font-weight: bold;
+    }
+  }
 `;
 
 export default DetailMenuTabs;

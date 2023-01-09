@@ -16,7 +16,7 @@ const ProductDetail = () => {
           "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1.jpg"
         }
       />
-      <DetailMenuTabs />
+      <DetailMenuTabs firstTabName={"상품 설명"} secondTabName={"상품 후기"} />
       <ProductDetailView
         detailImg={
           "https://raw.githubusercontent.com/congchu/coment-shop-server/master/assets/images/product1_detail.jpeg"
