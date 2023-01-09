@@ -7,16 +7,13 @@ import styled from "styled-components";
 const Home = () => {
   return (
     <div>
-      {/* Navigation */}
       <Navigation />
       <GrayLine height={1} />
-      {/* ThemeButton */}
       <ThemeSection>
         <ThemeButton themeName={"# 겨울 방한템"} />
         <ThemeButton themeName={"# 따순머그컵"} />
       </ThemeSection>
       <GrayLine height={8} />
-      {/* Product Card */}
       <ProductSection>
         <ProductCard
           name={"비숑 블랙 머그잔"}
