@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
@@ -15,6 +15,13 @@ const Home = () => {
       setProducts(mockTheme2Products);
     }
   };
+
+  useEffect(() => {
+    // 1초 후, 상품 초기화
+    setTimeout(() => {
+      setProducts(mockTheme1Products);
+    }, 1000);
+  }, []);
 
   return (
     <div>
