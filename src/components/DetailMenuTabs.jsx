@@ -1,10 +1,22 @@
 import styled from "styled-components";
 
-const DetailMenuTabs = ({ firstTabName, secondTabName }) => {
+const DetailMenuTabs = ({ firstTabName, secondTabName, tabMenu, onClick }) => {
   return (
     <StyledDetailMenuTabs>
-      <button name="button">{firstTabName}</button>
-      <button name="button">{secondTabName}</button>
+      <TabButton
+        name="button"
+        active={tabMenu === 0}
+        onClick={() => onClick(0)}
+      >
+        {firstTabName}
+      </TabButton>
+      <TabButton
+        name="button"
+        active={tabMenu === 1}
+        onClick={() => onClick(1)}
+      >
+        {secondTabName}
+      </TabButton>
     </StyledDetailMenuTabs>
   );
 };
@@ -17,28 +29,23 @@ const StyledDetailMenuTabs = styled.div`
   width: 100%;
 
   text-align: center;
+`;
 
-  button {
-    flex: 1;
-    height: 48px;
+const TabButton = styled.button`
+  flex: 1;
+  height: 48px;
 
-    background-color: #ffffff;
+  background-color: ${(props) => (props.active ? "#eeeeee" : "#ffffff")};
 
-    font-size: 16px;
-    font-family: "Noto Sans KR";
+  font-size: 16px;
+  font-family: "Noto Sans KR";
+  font-weight: ${(props) => props.active && "bold"};
 
-    border: 1px solid #eeeeee;
+  border: 1px solid #eeeeee;
 
-    margin: 25px 0;
+  margin: 25px 0;
 
-    cursor: pointer;
-
-    &:active,
-    &:focus {
-      background-color: #eeeeee;
-      font-weight: bold;
-    }
-  }
+  cursor: pointer;
 `;
 
 export default DetailMenuTabs;

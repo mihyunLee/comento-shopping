@@ -10,6 +10,15 @@ import { getProductDetail } from "../data/mockData";
 const ProductDetail = () => {
   let { productId } = useParams();
   const [product, setProduct] = useState();
+  const [tabMenu, setTabMenu] = useState(0);
+
+  const handleClickTabs = (tabId) => {
+    if (tabId === 0) {
+      setTabMenu(0);
+    } else {
+      setTabMenu(1);
+    }
+  };
 
   useEffect(() => {
     const result = getProductDetail(productId);
@@ -29,10 +38,13 @@ const ProductDetail = () => {
           <DetailMenuTabs
             firstTabName={"상품 설명"}
             secondTabName={"상품 후기"}
+            tabMenu={tabMenu}
+            onClick={handleClickTabs}
           />
           <ProductDetailView
             detailImg={product.detailImg}
             name={product.name}
+            tabMenu={tabMenu}
           />
           <BasketButton>장바구니 담기</BasketButton>
         </>
