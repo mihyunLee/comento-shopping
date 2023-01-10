@@ -5,9 +5,10 @@ const Review = ({ ...review }) => {
     <StyledReview>
       <UserSection>
         <img src={review.profileImg} alt={"프로필 이미지"} />
-        <span>{review.star}</span>
+        <span>{"⭐".repeat(Number(review.star))}</span>
         <span>
-          {review.user} | {review.date}
+          {review.user} |{" "}
+          {new Date(review.date).toLocaleDateString().slice(0, -1)}
         </span>
       </UserSection>
       <ContentSection>
