@@ -6,16 +6,19 @@ const ProductDetailView = ({ detailImg, name, tabMenu, reviews }) => {
     <StyledProductDetailView tabMenu={tabMenu}>
       {tabMenu === 0 ? (
         <DetailImg src={detailImg} alt={name + " 상품 설명"} />
-      ) : (
+      ) : reviews.length > 0 ? (
         reviews.map((review) => <Review key={review.id} {...review} />)
+      ) : (
+        <div>작성된 리뷰가 없습니다.</div>
       )}
     </StyledProductDetailView>
   );
 };
 
 const StyledProductDetailView = styled.div`
-  width: 100%;
   height: ${(props) => (props.tabMenu === 0 ? "825px" : "330px")};
+
+  margin: 0 24px;
 
   overflow-y: scroll;
 
@@ -26,8 +29,6 @@ const StyledProductDetailView = styled.div`
 
 const DetailImg = styled.img`
   width: 342px;
-
-  margin: 0 24px;
 
   object-fit: cover;
 `;

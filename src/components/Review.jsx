@@ -29,8 +29,6 @@ const StyledReview = styled.div`
   box-sizing: border-box;
 
   margin-bottom: 16px;
-  margin-left: 24px;
-  margin-right: 24px;
 
   padding: 5px 10px;
 
