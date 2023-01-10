@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import Review from "./Review";
 
-const ProductDetailView = ({ detailImg, name, tabMenu }) => {
+const ProductDetailView = ({ detailImg, name, tabMenu, reviews }) => {
   return (
     <StyledProductDetailView>
       {tabMenu === 0 ? (
         <img src={detailImg} alt={name + " 상품 설명"} />
       ) : (
-        <div>상품 후기 화면입니다.</div>
+        reviews.map((review) => <Review key={review.id} {...review} />)
       )}
     </StyledProductDetailView>
   );

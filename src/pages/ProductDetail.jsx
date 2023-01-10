@@ -5,11 +5,12 @@ import Navigation from "../components/Navigation";
 import ProductInfo from "../components/ProductInfo";
 import ProductDetailView from "../components/ProductDetailView";
 import { useParams } from "react-router-dom";
-import { getProductDetail } from "../data/mockData";
+import { getProductDetail, getProductReview } from "../data/mockData";
 
 const ProductDetail = () => {
   let { productId } = useParams();
   const [product, setProduct] = useState();
+  const [reviews, setReviews] = useState();
   const [tabMenu, setTabMenu] = useState(0);
 
   const handleClickTabs = (tabId) => {
@@ -23,6 +24,11 @@ const ProductDetail = () => {
   useEffect(() => {
     const result = getProductDetail(productId);
     setProduct(result);
+  }, [productId]);
+
+  useEffect(() => {
+    const response = getProductReview(productId);
+    setReviews(response);
   }, [productId]);
 
   return (
@@ -41,11 +47,14 @@ const ProductDetail = () => {
             tabMenu={tabMenu}
             onClick={handleClickTabs}
           />
-          <ProductDetailView
-            detailImg={product.detailImg}
-            name={product.name}
-            tabMenu={tabMenu}
-          />
+          {reviews && (
+            <ProductDetailView
+              detailImg={product.detailImg}
+              name={product.name}
+              tabMenu={tabMenu}
+              reviews={reviews}
+            />
+          )}
           <BasketButton>장바구니 담기</BasketButton>
         </>
       )}
