@@ -3,9 +3,9 @@ import Review from "./Review";
 
 const ProductDetailView = ({ detailImg, name, tabMenu, reviews }) => {
   return (
-    <StyledProductDetailView>
+    <StyledProductDetailView tabMenu={tabMenu}>
       {tabMenu === 0 ? (
-        <img src={detailImg} alt={name + " 상품 설명"} />
+        <DetailImg src={detailImg} alt={name + " 상품 설명"} />
       ) : (
         reviews.map((review) => <Review key={review.id} {...review} />)
       )}
@@ -15,21 +15,21 @@ const ProductDetailView = ({ detailImg, name, tabMenu, reviews }) => {
 
 const StyledProductDetailView = styled.div`
   width: 100%;
-  height: 825px;
+  height: ${(props) => (props.tabMenu === 0 ? "825px" : "330px")};
 
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
     display: none;
   }
+`;
 
-  img {
-    width: 342px;
+const DetailImg = styled.img`
+  width: 342px;
 
-    margin: 0 24px;
+  margin: 0 24px;
 
-    object-fit: cover;
-  }
+  object-fit: cover;
 `;
 
 export default ProductDetailView;
