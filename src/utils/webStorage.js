@@ -24,6 +24,14 @@ export const removeBasketItem = (productId) => {
   localStorage.setItem(BASKET, JSON.stringify(basketItems));
 };
 
+export const removeBasketItemAll = () => {
+  let basketItems = getBasketItems();
+  basketItems = [];
+
+  localStorage.removeItem(BASKET);
+  localStorage.setItem(BASKET, JSON.stringify(basketItems));
+};
+
 // 장바구니 상품 리스트 가져오기
 export const getBasketItems = () => {
   const basketItems = localStorage.getItem(BASKET);
