@@ -5,12 +5,17 @@ import Navigation from "../components/Navigation";
 import BasketButton from "../components/BasketButton";
 import GrayLine from "../components/GrayLine";
 import PriceTable from "../components/PriceTable";
+import ModalOrdered from "../components/ModalOrdered";
 import * as webStorage from "../utils/webStorage";
+import { useNavigate } from "react-router-dom";
 
 const Basket = () => {
+  const navigate = useNavigate();
+
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
   const [basketItemPrice, setBasketItemPrice] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const items = webStorage.getBasketItems();
@@ -36,6 +41,16 @@ const Basket = () => {
     setBasketItemCount(basketItems.length - 1);
   };
 
+  const handleOrderButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalButtonClick = () => {
+    setIsModalOpen(false);
+    webStorage.removeBasketItemAll();
+    navigate("/");
+  };
+
   return (
     <div>
       <Navigation header={"장바구니"} />
@@ -55,7 +70,8 @@ const Basket = () => {
       <BasketPriceSection>
         <PriceTable count={basketItemCount} price={basketItemPrice} />
       </BasketPriceSection>
-      <BasketButton text={"주문하기"} />
+      <BasketButton text={"주문하기"} onClick={handleOrderButtonClick} />
+      {isModalOpen && <ModalOrdered onCloseModal={handleModalButtonClick} />}
     </div>
   );
 };
