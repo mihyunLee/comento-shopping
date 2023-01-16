@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const PriceTable = () => {
+const PriceTable = ({ count, price }) => {
   return (
     <StyledPriceTable>
       <div>
-        <span>상품금액 (2개)</span>
-        <span>78,300원</span>
+        <span>상품금액 ({count}개)</span>
+        <span>{price.toLocaleString()}원</span>
       </div>
       <div>
         <span>배송비</span>
@@ -14,7 +14,7 @@ const PriceTable = () => {
       </div>
       <div>
         <span>총 주문금액</span>
-        <span>78,300원</span>
+        <span>{price.toLocaleString()}원</span>
       </div>
     </StyledPriceTable>
   );

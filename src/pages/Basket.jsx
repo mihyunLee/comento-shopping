@@ -10,16 +10,25 @@ import * as webStorage from "../utils/webStorage";
 const Basket = () => {
   const [basketItems, setBasketItems] = useState();
   const [basketItemCount, setBasketItemCount] = useState(0);
+  const [basketItemPrice, setBasketItemPrice] = useState(0);
 
   useEffect(() => {
     const items = webStorage.getBasketItems();
+    const totalPrice = items
+      .map((item) => item.price)
+      .reduce((acc, val) => acc + val, 0);
     setBasketItems(items);
     setBasketItemCount(items.length);
+    setBasketItemPrice(totalPrice);
   }, []);
 
   useEffect(() => {
     const items = webStorage.getBasketItems();
+    const totalPrice = items
+      .map((item) => item.price)
+      .reduce((acc, val) => acc + val, 0);
     setBasketItems(items);
+    setBasketItemPrice(totalPrice);
   }, [basketItemCount]);
 
   const handleRemoveButtonClick = (productId) => {
@@ -44,7 +53,7 @@ const Basket = () => {
           ))}
       </BasketItemSection>
       <BasketPriceSection>
-        <PriceTable />
+        <PriceTable count={basketItemCount} price={basketItemPrice} />
       </BasketPriceSection>
       <BasketButton text={"주문하기"} />
     </div>
