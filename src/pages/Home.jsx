@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import ThemeButton from "../components/ThemeButton";
 import ProductCard from "../components/ProductCard";
+import GrayLine from "../components/GrayLine";
 import styled from "styled-components";
 import { mockTheme1Products, mockTheme2Products } from "../data/mockData";
 import { useNavigate } from "react-router-dom";
@@ -58,13 +59,6 @@ const Home = () => {
     </div>
   );
 };
-
-const GrayLine = styled.div`
-  width: 100%;
-  height: ${(props) => props.height}px;
-
-  background: #eeeeee;
-`;
 
 const ThemeSection = styled.div`
   display: flex;
