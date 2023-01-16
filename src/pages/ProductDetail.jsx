@@ -53,7 +53,7 @@ const ProductDetail = () => {
               reviews={reviews}
             />
           )}
-          <BasketButton>장바구니 담기</BasketButton>
+          <BasketButton text={"장바구니 담기"} />
         </>
       )}
     </div>

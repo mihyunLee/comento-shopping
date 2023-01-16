@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const BasketButton = ({ children }) => {
-  return <StyledBasketButton>{children}</StyledBasketButton>;
+const BasketButton = ({ text, onClick }) => {
+  return <StyledBasketButton onClick={onClick}>{text}</StyledBasketButton>;
 };
 
 const StyledBasketButton = styled.button`
@@ -10,6 +10,7 @@ const StyledBasketButton = styled.button`
 
   font-family: "Noto Sans KR";
   font-weight: bold;
+  font-size: 16px;
   text-align: center;
 
   background-color: #24dbaf;
