@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import GrayLine from "./GrayLine";
 
-const BasketItem = ({ name, thumbnail, price }) => {
+const BasketItem = ({ name, thumbnail, price, onRemoveButtonClick }) => {
   return (
     <>
       <StyledBasketItem>
         <BasketProduct>
           <img src={thumbnail} alt={name} />
           <span>{name}</span>
-          <button>x</button>
+          <button onClick={onRemoveButtonClick}>x</button>
           <span>{price.toLocaleString()}원</span>
         </BasketProduct>
         <GrayLine height={1} />

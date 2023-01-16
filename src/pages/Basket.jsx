@@ -1,29 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import BasketItem from "../components/BasketItem";
 import Navigation from "../components/Navigation";
 import BasketButton from "../components/BasketButton";
-import { mockTheme1Products } from "../data/mockData";
 import GrayLine from "../components/GrayLine";
 import PriceTable from "../components/PriceTable";
+import * as webStorage from "../utils/webStorage";
 
 const Basket = () => {
-  // FIXME: 임시 데이터이므로 삭제하기
-  const [basketList, setBasketList] = useState(mockTheme1Products);
+  const [basketItems, setBasketItems] = useState();
+  const [basketItemCount, setBasketItemCount] = useState(0);
+
+  useEffect(() => {
+    const items = webStorage.getBasketItems();
+    setBasketItems(items);
+    setBasketItemCount(items.length);
+  }, []);
+
+  useEffect(() => {
+    const items = webStorage.getBasketItems();
+    setBasketItems(items);
+  }, [basketItemCount]);
+
+  const handleRemoveButtonClick = (productId) => {
+    webStorage.removeBasketItem(productId);
+    setBasketItemCount(basketItems.length - 1);
+  };
 
   return (
     <div>
       <Navigation header={"장바구니"} />
       <GrayLine height={1} />
       <BasketItemSection>
-        {basketList.map((basketItem) => (
-          <BasketItem
-            key={basketItem.id}
-            name={basketItem.name}
-            thumbnail={basketItem.thumbnail}
-            price={basketItem.price}
-          />
-        ))}
+        {basketItems &&
+          basketItems.map((basketItem) => (
+            <BasketItem
+              key={basketItem.id}
+              name={basketItem.name}
+              thumbnail={basketItem.thumbnail}
+              price={basketItem.price}
+              onRemoveButtonClick={() => handleRemoveButtonClick(basketItem.id)}
+            />
+          ))}
       </BasketItemSection>
       <BasketPriceSection>
         <PriceTable />

@@ -4,11 +4,14 @@ import DetailMenuTabs from "../components/DetailMenuTabs";
 import Navigation from "../components/Navigation";
 import ProductInfo from "../components/ProductInfo";
 import ProductDetailView from "../components/ProductDetailView";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getProductDetail, getProductReview } from "../data/mockData";
+import * as webStorage from "../utils/webStorage";
 
 const ProductDetail = () => {
   let { productId } = useParams();
+  const navigate = useNavigate();
+
   const [product, setProduct] = useState();
   const [reviews, setReviews] = useState();
   const [tabMenu, setTabMenu] = useState(0);
@@ -28,6 +31,11 @@ const ProductDetail = () => {
     setProduct(product);
     setReviews(productReview);
   }, [productId]);
+
+  const handleClickAddBasketButton = (product) => {
+    webStorage.addBasket(product);
+    navigate("/basket");
+  };
 
   return (
     <div>
@@ -53,7 +61,10 @@ const ProductDetail = () => {
               reviews={reviews}
             />
           )}
-          <BasketButton text={"장바구니 담기"} />
+          <BasketButton
+            text={"장바구니 담기"}
+            onClick={() => handleClickAddBasketButton(product)}
+          />
         </>
       )}
     </div>
