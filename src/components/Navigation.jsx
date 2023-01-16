@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Navigation = ({ isHome = false }) => {
+const Navigation = ({ isHome = false, header }) => {
   const navigate = useNavigate();
 
   return (
     <StyledNavigation isHome={isHome}>
       <span onClick={() => navigate(-1)}>&lt;</span>
-      <h3>코멘토 쇼핑</h3>
+      <h3>{header}</h3>
       <span>&nbsp;</span>
     </StyledNavigation>
   );

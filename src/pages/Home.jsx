@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <Navigation isHome={true} />
+      <Navigation isHome={true} header={"코멘토 쇼핑"} />
       <GrayLine height={1} />
       <ThemeSection>
         <ThemeButton

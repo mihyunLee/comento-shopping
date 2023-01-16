@@ -31,7 +31,7 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navigation />
+      <Navigation header={"코멘토 쇼핑"} />
       {product && (
         <>
           <ProductInfo
