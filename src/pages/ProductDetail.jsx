@@ -22,13 +22,11 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    const result = getProductDetail(productId);
-    setProduct(result);
-  }, [productId]);
+    const product = getProductDetail(productId);
+    const productReview = getProductReview(productId);
 
-  useEffect(() => {
-    const response = getProductReview(productId);
-    setReviews(response);
+    setProduct(product);
+    setReviews(productReview);
   }, [productId]);
 
   return (

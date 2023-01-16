@@ -81,7 +81,7 @@ export const mockReview = [
     productId: 1,
     user: "상냥한 어피치",
     profileImg:
-      "https://w.namu.la/s/a91617f042302a5826f554dc238c73c96d17a4d5a7a5553b4aedb5ea458dbd0b674ffe5087652bc22c8619daeaab387909a6a20a9d7ad8b54da215258caeb9693255ba3f6c2430a649b6a853973bcc468659594ec8a2711cdf395b0fb3e4eead",
+      "https://user-images.githubusercontent.com/51310674/212607951-66f9b703-2f15-491a-8d86-f52633bdbd85.png",
     star: 5,
     date: "2023-12-11T06:52:12.816Z",
     content: "저렴한 가격에 잘 샀어요",
@@ -91,7 +91,7 @@ export const mockReview = [
     productId: 1,
     user: "다정한 네오",
     profileImg:
-      "https://w.namu.la/s/b877f6e239cdd07b647afd6f045c754053f00b27198edfd5535825b901d2b0375c2ddcd54582de4981e1c27f8606e3a707cc96a3e50724459ba310b8ce47396384f182bb7e37ef3667a24413ac02498d3d4e91d1a2e3abd4038ce0690b64a5d9",
+      "https://user-images.githubusercontent.com/51310674/212607953-a2269687-1859-4009-aa79-01abbb232a63.png",
     star: 4,
     date: "2023-12-27T06:53:28.399Z",
     content: "배송이 빨라요!",
@@ -101,7 +101,7 @@ export const mockReview = [
     productId: 3,
     user: "다정한 네오",
     profileImg:
-      "https://w.namu.la/s/b877f6e239cdd07b647afd6f045c754053f00b27198edfd5535825b901d2b0375c2ddcd54582de4981e1c27f8606e3a707cc96a3e50724459ba310b8ce47396384f182bb7e37ef3667a24413ac02498d3d4e91d1a2e3abd4038ce0690b64a5d9",
+      "https://user-images.githubusercontent.com/51310674/212607953-a2269687-1859-4009-aa79-01abbb232a63.png",
     star: 5,
     date: "2022-01-08T06:53:45.673Z",
     content: "친구한테 선물해줬더니 좋아해요",
@@ -111,7 +111,7 @@ export const mockReview = [
     productId: 10,
     user: "하트뿅뿅 라이언",
     profileImg:
-      "https://w.namu.la/s/9071d0575b6d14c0d6fc5832e26fe8ef0a298a1abb1d442cc3c865534ec5e949e8a2d195fe425ebb15f2f1f5b270e6b86979bd1e3fcb4e9d9432bdfbf4fb02a6252a318cc331cb385371a406ca8329d9baebea8204f2c1673c4af7c012801b27",
+      "https://user-images.githubusercontent.com/51310674/212607945-80e07a9a-e54a-4fce-9809-cfe157db406f.png",
     star: 3,
     date: "2023-01-10T06:53:59.268Z",
     content: "품질이 그냥 그래요",
