@@ -1,23 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const ModalOrdered = ({ onCloseModal }) => {
+const ModalOrdered = ({ modalText, hasCancle, onClickOk, onClickCancle }) => {
   return (
     <>
       <ModalOverlay />
       <StyledModal>
-        <h3>주문되었습니다.</h3>
-        <button onClick={onCloseModal}>확인</button>
+        <h3>{modalText}</h3>
+        <button onClick={onClickOk}>확인</button>
+        {hasCancle && <button onClick={onClickCancle}>취소</button>}
       </StyledModal>
     </>
   );
 };
 
 const StyledModal = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  text-align: center;
 
   width: 240px;
   height: 160px;
@@ -39,11 +38,12 @@ const StyledModal = styled.div`
 
   h3 {
     font-size: 20px;
+    margin-top: 35px;
     margin-bottom: 30px;
   }
 
   button {
-    width: 120px;
+    width: 70px;
     height: 40px;
 
     font-family: "Noto Sans KR";
@@ -54,6 +54,8 @@ const StyledModal = styled.div`
     border-radius: 4px;
 
     cursor: pointer;
+
+    margin: 0 10px;
   }
 `;
 

@@ -16,6 +16,7 @@ const Basket = () => {
   const [basketItemCount, setBasketItemCount] = useState(0);
   const [basketItemPrice, setBasketItemPrice] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOrder, setIsOrder] = useState(false);
 
   useEffect(() => {
     const items = webStorage.getBasketItems();
@@ -45,10 +46,19 @@ const Basket = () => {
     setIsModalOpen(true);
   };
 
-  const handleModalButtonClick = () => {
+  const handleModalClickOk = () => {
+    if (isOrder) {
+      setIsOrder(false);
+      webStorage.removeBasketItemAll();
+      navigate("/");
+    } else {
+      setIsModalOpen(false);
+      setIsOrder(true);
+    }
+  };
+
+  const handleModalClickCancle = () => {
     setIsModalOpen(false);
-    webStorage.removeBasketItemAll();
-    navigate("/");
   };
 
   return (
@@ -71,7 +81,20 @@ const Basket = () => {
         <PriceTable count={basketItemCount} price={basketItemPrice} />
       </BasketPriceSection>
       <BasketButton text={"주문하기"} onClick={handleOrderButtonClick} />
-      {isModalOpen && <ModalOrdered onCloseModal={handleModalButtonClick} />}
+      {isModalOpen && (
+        <ModalOrdered
+          modalText={"주문하시겠습니까?"}
+          hasCancle={true}
+          onClickOk={handleModalClickOk}
+          onClickCancle={handleModalClickCancle}
+        />
+      )}
+      {isOrder && (
+        <ModalOrdered
+          modalText={"주문되었습니다."}
+          onClickOk={handleModalClickOk}
+        />
+      )}
     </div>
   );
 };
